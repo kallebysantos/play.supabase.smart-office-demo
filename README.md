@@ -77,26 +77,29 @@ select vault.create_secret('[PROJECT-ANON-KEY]', 'supabase_anon_key');
 1. Run in **your terminal** the following command:
 
 ```bash
-npm run functions:deploy-all
+npx supabase functions deploy
 ```
 
 2. Deploy the **secrets** in your `.env` file
 
 ```bash
-npx supabase secrets set --env-file .env
+npx supabase secrets set --env-file supabase/functions/.env
+
 ```
 
-### Step 6: Connect to Vercel
+### Step 6: Deploy to Vercel
+
+1. Update your [next.config.ts](./next.config.ts:20) file to match your project ref:
+
+```diff
+- hostname: "jtaqjclnmyyfpsayscvl.supabase.co",
++ hostname: "[PROJECT-REF].supabase.co",
+```
 
 1. Go to **[vercel.com](https://vercel.com)** and sign up/login
 2. Click **"New Project"**
 3. **Import** your GitHub repository
-4. Vercel will auto-detect Next.js - **click "Deploy"**
-
-### Step 7: Add Vercel Environment Variables
-
-1. In your Vercel **project dashboard**, go to **Settings** → **Environment Variables**
-2. Add these **variables**:
+4. Add these **Environment Variables**:
 
    ```bash
    NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
@@ -106,7 +109,7 @@ npx supabase secrets set --env-file .env
    NEXT_PUBLIC_UNSPLASH_ACCESS_KEY=your_unsplash_access_key
    ```
 
-3. **Click "Redeploy"** to apply the new variables
+5. Vercel will auto-detect Next.js - **click "Deploy"**
 
 ### Step 8: Generate demo data
 
