@@ -44,7 +44,7 @@ This project includes [pgflow](https://pgflow.dev), a workflow engine for Supaba
    npx supabase link --project-ref YOUR_PROJECT_REF
    ```
 
-   (Find your project ref in the Supabase dashboard URL)
+> Find your project ref in the Supabase dashboard URL
 
 2. **Environment Configuration**
 
@@ -80,7 +80,7 @@ select vault.create_secret('[PROJECT-ANON-KEY]', 'supabase_anon_key');
 npm run functions:deploy-all
 ```
 
-2. Deploy the edge functions secrets in your `.env` file
+2. Deploy the **secrets** in your `.env` file
 
 ```bash
 npx supabase secrets set --env-file .env
@@ -88,17 +88,17 @@ npx supabase secrets set --env-file .env
 
 ### Step 6: Connect to Vercel
 
-1. **Go to [vercel.com](https://vercel.com)** and sign up/login
-2. **Click "New Project"**
-3. **Import your GitHub repository**
-4. **Vercel will auto-detect Next.js** - click "Deploy"
+1. Go to **[vercel.com](https://vercel.com)** and sign up/login
+2. Click **"New Project"**
+3. **Import** your GitHub repository
+4. Vercel will auto-detect Next.js - **click "Deploy"**
 
 ### Step 7: Add Vercel Environment Variables
 
-1. **In your Vercel project dashboard**, go to **Settings** → **Environment Variables**
-2. **Add these variables**:
+1. In your Vercel **project dashboard**, go to **Settings** → **Environment Variables**
+2. Add these **variables**:
 
-   ```
+   ```bash
    NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
    NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
    SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
@@ -110,7 +110,7 @@ npx supabase secrets set --env-file .env
 
 ### Step 8: Generate demo data
 
-1. Run the following command to generate rooms, users, tickets and associated images
+1. Run the following command to **generate rooms, users, tickets and associated images**
 
    ```bash
    npm run generate:all
