@@ -89,17 +89,17 @@ npx supabase secrets set --env-file supabase/functions/.env
 
 ### Step 6: Deploy to Vercel
 
-1. Update your [next.config.ts](./next.config.ts:20) file to match your project ref:
+1. Update your [next.config.ts](next.config.ts#L20) file to match your project ref:
 
 ```diff
 - hostname: "jtaqjclnmyyfpsayscvl.supabase.co",
 + hostname: "[PROJECT-REF].supabase.co",
 ```
 
-1. Go to **[vercel.com](https://vercel.com)** and sign up/login
-2. Click **"New Project"**
-3. **Import** your GitHub repository
-4. Add these **Environment Variables**:
+2. Go to **[vercel.com](https://vercel.com)** and sign up/login
+3. Click **"New Project"**
+4. **Import** your GitHub repository
+5. Add these **Environment Variables**:
 
    ```bash
    NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
@@ -109,7 +109,7 @@ npx supabase secrets set --env-file supabase/functions/.env
    NEXT_PUBLIC_UNSPLASH_ACCESS_KEY=your_unsplash_access_key
    ```
 
-5. Vercel will auto-detect Next.js - **click "Deploy"**
+6. Vercel will auto-detect Next.js - **click "Deploy"**
 
 ### Step 8: Generate demo data
 
